@@ -35,6 +35,8 @@ public interface Controller {
     
     List<String> getStringHistory();
     
+    void printCurrentString() throws IllegalStateException; 
+    
     
 
 }

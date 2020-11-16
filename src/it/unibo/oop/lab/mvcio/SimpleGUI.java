@@ -63,7 +63,6 @@ public final class SimpleGUI {
                 try {
                     SimpleGUI.this.controller.writeOnCurrentFile(SimpleGUI.this.textArea.getText());
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
                 
