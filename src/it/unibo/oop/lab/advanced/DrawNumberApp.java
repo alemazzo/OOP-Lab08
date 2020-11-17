@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
  */
 public final class DrawNumberApp implements DrawNumberViewObserver {
 
-    private static final String DEFAULT_CONFIG_PATH = "/config.yml";
+    private static final String DEFAULT_CONFIG_PATH = "config.yml";
     private static final int MIN = 0;
     private static final int MAX = 100;
     private static final int ATTEMPTS = 10;
@@ -41,20 +41,20 @@ public final class DrawNumberApp implements DrawNumberViewObserver {
     private DrawNumberImpl loadFromConfigFile(final String path) {
         final Map<String, String> configurations = new HashMap<>();
         try {
-            final String confFile = ClassLoader.getSystemResource(path).getPath();
-            for (final String conf : Files.readAllLines(Path.of(confFile))) {
+
+            for (final String conf : Files.readAllLines(Path.of(ClassLoader.getSystemResource(path).getPath()))) {
                 final StringTokenizer st = new StringTokenizer(conf, ":");
-                final String confName = st.nextToken();
-                final String confValue = st.nextToken();
+                final String confName = st.nextToken().trim();
+                final String confValue = st.nextToken().trim();
                 configurations.put(confName, confValue);
             }
-            
+
         } catch (IOException e) {
             e.printStackTrace();
             throw new IllegalStateException("Config file not valid.", e);
         }
-        return new DrawNumberImpl(Integer.parseInt(configurations.get("min")),
-                Integer.parseInt(configurations.get("min")), Integer.parseInt(configurations.get("min")));
+        return new DrawNumberImpl(Integer.parseInt(configurations.get("minimum")),
+                Integer.parseInt(configurations.get("maximum")), Integer.parseInt(configurations.get("attempts")));
     }
 
     @Override
