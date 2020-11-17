@@ -4,25 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ControllerImpl implements Controller {
-    
-    private final List<String> strings = new ArrayList<>();
-    private int currentIndex = 0;
 
-    private String getStringAtIndex(final int index) throws IllegalStateException{
+    private final List<String> strings = new ArrayList<>();
+    private int currentIndex;
+
+    private String getStringAtIndex(final int index) {
         if (this.strings.size() <= index) {
             throw new IllegalStateException();
-        }else {
+        } else {
             return this.strings.get(index);
         }
     }
-    
+
     @Override
-    public String getCurrentString() throws IllegalStateException {
+    public String getCurrentString() {
         return this.getStringAtIndex(this.currentIndex);
     }
 
     @Override
-    public void setNextString(final String s) throws IllegalArgumentException {
+    public void setNextString(final String s) {
         if (s == null || s.equals("")) {
             throw new IllegalArgumentException();
         }
@@ -42,7 +42,7 @@ public class ControllerImpl implements Controller {
     @Override
     public void printCurrentString() throws IllegalStateException {
         System.out.println(this.getCurrentString());
-        this.currentIndex++;        
+        this.currentIndex++;
     }
 
 }

@@ -27,15 +27,15 @@ public interface Controller {
      * 
      */
     
-    String getCurrentString() throws IllegalStateException;
+    String getCurrentString();
     
-    void setNextString(final String s) throws IllegalArgumentException;    
+    void setNextString(final String s);    
     
     String getNextString();
     
     List<String> getStringHistory();
     
-    void printCurrentString() throws IllegalStateException; 
+    void printCurrentString(); 
     
     
 
