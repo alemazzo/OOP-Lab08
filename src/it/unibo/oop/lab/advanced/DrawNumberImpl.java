@@ -28,6 +28,8 @@ public final class DrawNumberImpl implements DrawNumber {
         this.attempts = attempts;
         this.reset();
     }
+    
+    
 
     @Override
     public void reset() {
