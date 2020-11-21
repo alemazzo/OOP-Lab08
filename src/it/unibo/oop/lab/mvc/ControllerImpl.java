@@ -40,7 +40,7 @@ public class ControllerImpl implements Controller {
     }
 
     @Override
-    public void printCurrentString() throws IllegalStateException {
+    public void printCurrentString() {
         System.out.println(this.getCurrentString());
         this.currentIndex++;
     }

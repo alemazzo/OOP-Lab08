@@ -70,7 +70,7 @@ public final class SimpleGUI {
         this.printButton.addActionListener(new ActionListener() {
             
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 SimpleGUI.this.controller.setNextString(SimpleGUI.this.textField.getText());
                 SimpleGUI.this.controller.printCurrentString();
             }
@@ -80,7 +80,7 @@ public final class SimpleGUI {
         this.showHistoryButton.addActionListener(new ActionListener() {
             
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 SimpleGUI.this.textArea.setText(SimpleGUI.this.controller.getStringHistory().toString());
                 
             }

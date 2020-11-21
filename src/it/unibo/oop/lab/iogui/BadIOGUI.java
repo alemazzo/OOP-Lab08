@@ -87,7 +87,7 @@ public class BadIOGUI {
                 try {
                     System.out.println(Files.readAllLines(Path.of(PATH)));
                 } catch (IOException e1) {
-                    // e1.printStackTrace();
+                    e1.printStackTrace();
                 }
             }
         });

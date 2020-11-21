@@ -96,8 +96,8 @@ public final class SimpleGUI {
         frame.setVisible(true);
     }
     
-    public static void main(String[] args) {
-        new SimpleGUI().display();;
+    public static void main(final String[] args) {
+        new SimpleGUI().display();
 
     }
 
